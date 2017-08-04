@@ -2,7 +2,7 @@ from flask import Flask
 from celery import Celery
 from flask import jsonify, url_for, render_template
 from scraping import LifehackerCountCommentsParser
-from . import config
+import config
 
 app = Flask(__name__)
 # app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
