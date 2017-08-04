@@ -1,0 +1,10 @@
+.progress__percent {
+    height: 24px;
+    line-height: 24px;
+    width: 0%;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+    background-color: cornflowerblue;
+}
