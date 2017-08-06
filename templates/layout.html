@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Scraping</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/third-party/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header">
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/">Scraping</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="/parse">Parse <span class="sr-only">(current)</span></a></li>
+                        <li><a href="/login">Sign In</a></li>
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
+
+                <div class="header__title">
+                    <h1>
+                        {% block page_title %}
+                        {% endblock %}
+                    </h1>
+                </div>
+            </div>
+
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+    <script src="static/third-party/jquery-3.2.1.min.js"></script>
+    <script src="static/third-party/bootstrap/js/bootstrap.js"></script>
+{% endblock %}
+</body>
+</html>

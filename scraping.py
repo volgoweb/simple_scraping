@@ -55,9 +55,3 @@ class LifehackerCountCommentsParser(object):
         # response = requests.get(''.format(self.BASE_URL, startindex), params=params)
         response = requests.get('{}?startindex={}'.format(self.BASE_URL, startindex))
         return response.content
-
-
-if __name__ == '__main__':
-    print('Run!!!!')
-    parser = LifehackerCountCommentsParser()
-    parser.run()

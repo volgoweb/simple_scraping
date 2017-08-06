@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Scraping</title>
-    <link rel="stylesheet" href="static/css/styles.css">
-    <link rel="stylesheet" href="static/third-party/bootstrap/css/bootstrap.css">
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="content">
-                <h1>Scraping count comments of articles on https://lifehacker.com </h1>
-                <p>
-                    Site division: <a href="https://lifehacker.com/tag/how-i-work</h1">https://lifehacker.com/tag/how-i-work</a>
-                </p>
+{% extends "layout.html" %}
 
-                <div class="progress">
-                    <div class="progress__percent"></div>
-                </div>
+{% block page_title %}
+    {{ super() }}
+    Scraping count comments of articles on https://lifehacker.com
+{% endblock %}
 
-                <h3>Articles and count comments:</h3>
-                <div class="result"></div>
-            </div>
-        </div>
+{% block content %}
+    {{ super() }}
+    <p>
+        Site division: <a href="https://lifehacker.com/tag/how-i-work</h1">https://lifehacker.com/tag/how-i-work</a>
+    </p>
+
+    <div class="progress">
+        <div class="progress__percent"></div>
     </div>
-</div>
 
-    <script src="static/third-party/jquery-3.2.1.min.js"></script>
-    <script src="static/third-party/bootstrap/js/bootstrap.js"></script>
+    <h3>Articles and count comments:</h3>
+    <div class="result"></div>
+{% endblock %}
+
+{% block js %}
+    {{ super() }}
     <script src="static/js/scraping_progress.js?v=2"></script>
-</body>
-</html>
+{% endblock %}
