@@ -1,7 +1,6 @@
 from flask import jsonify, url_for, render_template, request
 from app import app
 from tasks import scraping_lifehacker_task
-from forms import LoginForm
 
 
 @app.route('/')
@@ -32,12 +31,3 @@ def scraping_status(task_id):
         'result': task.info.get('result') if isinstance(task.info, dict) else 0,
     }
     return jsonify(data)
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm(data=request.form)
-    if request.method == 'POST':
-        if form.validate():
-            print('!!!!!!!!!!!!!! Is Valid')
-    return render_template('login.html', form=form)
